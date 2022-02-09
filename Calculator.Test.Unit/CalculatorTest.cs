@@ -34,7 +34,7 @@ namespace Calculator.Test.Unit
         public void TestOfSubtract_MulitpleNumbes(double a, double b, double result)
         {
             var test = _uut.Subtract(a, b);
-            Assert.That(test, Is.EqualTo(result));
+            Assert.That(test, Is.EqualTo(result).Within(1E-14));
         }
 
         [TestCase(2, 2, 4)]
