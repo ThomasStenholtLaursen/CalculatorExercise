@@ -37,6 +37,17 @@ namespace Calculator.Test.Unit
             Assert.That(test, Is.EqualTo(result).Within(1E-14));
         }
 
+        [TestCase(10, 5, 50)]
+        [TestCase(14, 3, 42)]
+        [TestCase(6, 9, 54)]
+        [TestCase(15.6, 8.9, 138.84)]
+        [Test]
+        public void TestOfMultiply_MulitpleNumbes(double a, double b, double result)
+        {
+            var test = _uut.Multiply(a, b);
+            Assert.That(test, Is.EqualTo(result).Within(1E-14));
+        }
+
         [TestCase(2, 2, 4)]
         [TestCase(5, 2, 25)]
         [TestCase(5, -1, 0.2)]
