@@ -36,8 +36,15 @@ namespace Calculator.Library
 
         public double Divide(double dividend, double divisor)
         {
+
+            if (divisor == 0)
+            {
+                throw new DivideByZeroException("Cannot divide by ZERO");
+            }
+
             Accumulator = (dividend / divisor);
             return Accumulator;
+
         }
 
         public double Add(double addend)
@@ -46,7 +53,7 @@ namespace Calculator.Library
         }
         public double Subtract(double subtractor)
         {
-            return subtractor - Accumulator;
+            return Accumulator - subtractor;
         }
         public double Multiply(double multiplier)
         {
@@ -60,7 +67,7 @@ namespace Calculator.Library
 
         public double Divide(double divisor)
         {
-            return (divisor / Accumulator);
+            return (Accumulator / divisor);
         }
     }
 }
